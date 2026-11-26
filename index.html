@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>나의 버킷리스트</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>나의 버킷리스트</h1>
+      <p class="progress" id="progress">아직 목표가 없어요</p>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    </header>
+
+    <form class="add-form" id="addForm">
+      <input
+        type="text"
+        id="newItem"
+        placeholder="이루고 싶은 꿈을 적어보세요"
+        maxlength="100"
+        autocomplete="off"
+        aria-label="새 버킷리스트 항목"
+      />
+      <select id="newCategory" aria-label="카테고리">
+        <option value="travel">✈️ 여행</option>
+        <option value="challenge">🔥 도전</option>
+        <option value="learn">📚 배우기</option>
+        <option value="health">💪 건강</option>
+        <option value="people">💛 관계</option>
+        <option value="etc">✨ 기타</option>
+      </select>
+      <button type="submit" aria-label="추가">추가</button>
+    </form>
+
+    <div class="filters" role="tablist">
+      <button class="filter active" data-filter="all">전체</button>
+      <button class="filter" data-filter="active">진행 중</button>
+      <button class="filter" data-filter="done">완료</button>
+    </div>
+
+    <!-- 카테고리 필터 버튼은 app.js에서 채워 넣습니다 -->
+    <div class="cat-filters" id="catFilters"></div>
+
+    <ul class="list" id="list"></ul>
+    <p class="empty" id="empty">목록이 비어 있어요. 첫 번째 꿈을 추가해보세요!</p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
